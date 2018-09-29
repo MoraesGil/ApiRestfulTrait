@@ -1,0 +1,21 @@
+{
+    "name": "moraesgil/api-restful-trait",
+    "description": "A simple Laravel trait with restful crud implementation.",
+    "keywords": ["framework", "laravel","entity","model"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gilberto Prudêncio Vaz de Moraes",
+            "email": "moraesdev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "moraesgil/entity-validator-trait": "~1.0"
+    },
+    "autoload":{
+        "psr-4":{
+            "Traits\\Controllers\\":"./src"
+        }
+    }
+}
