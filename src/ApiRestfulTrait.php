@@ -72,7 +72,7 @@ trait ApiRestfulTrait
   private function getData(Request $request)
   {
     if ($this->modelGetMethodName) {
-      return response()->json($this->Model()->{$this->modelGetMethodName}($request->all()),200 );
+      return response()->json($this->Model()->{$this->modelGetMethodName}($request->all()),200);
     }
     return response()->json($this->Model()->paginate($request->get("limit")),200 );
   }

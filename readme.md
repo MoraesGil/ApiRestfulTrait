@@ -20,7 +20,7 @@ $ composer require moraesgil/api-restful-trait
 ### Usage
 
 
-create your routes in routes/web.php or your's routes file
+create your routes in routes/api.php or your prefer routes file
 ```php
 Route::resource('/samples', 'YourLaravelController', ['except' => ['create', 'edit', 'show']]);
 
@@ -34,7 +34,6 @@ php artisan make model YourLaravel
 
 In your Controller
 ```php
-
 use Traits\Controllers\ApiRestfulTrait;  //<<<<< add this line
 
 class YourLaravelController extends Controller {
@@ -42,9 +41,18 @@ class YourLaravelController extends Controller {
 
      // ..others non-crud methods
 }
-// done just it !!!
 
 ```
+Include the [EntityValidatorTrait](https://github.com/MoraesGil/EntityValidatorTrait) it's a dependency. Please check documentation for more info. Also read about Autoload model entity in this extras section.
+```php
+use Traits\Entities\EntityValidatorTrait;  //<<<<< add this line
+
+class YourLaravel extends Model {
+   use EntityValidatorTrait; //<<<<< add this line
+}
+
+```
+
 
 ## Extras
 
@@ -80,6 +88,7 @@ class YourLaravelController extends Controller {
        $this->Model = $m;
        // or
        $this->modelName = "Mymodel";
+       // or Just create a model same name of controller, from this controller sample "YourLaravel"
    }
 }
 ```
